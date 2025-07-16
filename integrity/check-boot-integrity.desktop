@@ -1,0 +1,9 @@
+# Put in autostart ~/.config
+[Desktop Entry]
+Type=Application
+Exec=kgx -- bash -c "/home/user/autocheck.sh"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=IntegrityChecker
+Comment=See info for Integrity
