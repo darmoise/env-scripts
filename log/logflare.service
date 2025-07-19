@@ -1,0 +1,10 @@
+[Unit]
+Description=Logflare System Event Watcher
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/local/bin/logflare_event_watcher.sh
+Restart=always
+
+[Install]
+WantedBy=default.target

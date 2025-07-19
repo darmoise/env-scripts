@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/local/bin/lfs.sh system_login
+Hidden=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
+Name=LFS
+Comment=Logflare send
