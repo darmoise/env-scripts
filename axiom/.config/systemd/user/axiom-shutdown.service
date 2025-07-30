@@ -1,0 +1,11 @@
+[Unit]
+Description=Send event on shutdown
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/send_axiom_event.sh system_shutdown
+
+[Install]
+WantedBy=shutdown.target
