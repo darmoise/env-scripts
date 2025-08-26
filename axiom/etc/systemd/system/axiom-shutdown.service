@@ -2,10 +2,14 @@
 Description=Send event on shutdown
 DefaultDependencies=no
 Before=shutdown.target
+RequiresMountsFor=/home/user
 
 [Service]
 Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/true
 ExecStart=/usr/local/bin/send_axiom_event.sh system_shutdown
+WantedBy=multi-user.target
 
 [Install]
 WantedBy=shutdown.target

@@ -36,7 +36,8 @@ JSON=$(jq -n \
 
 echo "$TIMESTAMP | $EVENT_TYPE | battery=$BATTERY_LEVEL | ip=$IP" >> "$HOME/.auth_event_log"
 
-curl -s -X POST https://api.axiom.co/v1/datasets/auth_logs/ingest \
+curl -s -X POST https://api.axiom.co/v1/datasets/$AXIOM_DATASET/ingest \
   -H "Authorization: Bearer $AXIOM_API_KEY" \
   -H "Content-Type: application/json" \
-  -d "[$JSON]"
+  --connect-timeout 2 --max-time 5 --retry 0 \
+  -d "[$JSON]" || true
